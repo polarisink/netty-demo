@@ -1,9 +1,9 @@
-package com.lqs.netty.c1;
+package com.lqs;
 
 import lombok.extern.slf4j.Slf4j;
+import org.junit.Test;
 
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 
@@ -13,8 +13,9 @@ import java.nio.channels.FileChannel;
  */
 
 @Slf4j
-public class TestByteBuffer {
-  public static void main(String[] args) {
+public class ByteBufferTest {
+  @Test
+  public void testInput() {
     //获取输入流
     try (FileChannel channel = new FileInputStream("data.txt").getChannel()) {
       //获取buffer
@@ -36,8 +37,9 @@ public class TestByteBuffer {
         //切换至写模式
         buffer.clear();
       }
-
-    } catch (IOException e) {
+    } catch (Exception e) {
+      log.error("exception,{}", e);
+      e.printStackTrace();
     }
 
   }
