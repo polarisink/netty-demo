@@ -1,4 +1,4 @@
-package com.lqs;
+package com.lqs.nio;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.lqs;
+package com.lqs.nio;
 
 
 import java.io.IOException;
@@ -7,7 +7,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 /**
- *
  * @author lqs
  * @date 2022/9/18
  */
@@ -16,7 +15,7 @@ public class FilesCopyTest {
 
     String source = "";
     String target = "";
-    Files.walk(Paths.get(source)).forEach(path->{
+    Files.walk(Paths.get(source)).forEach(path -> {
       try {
         String targetName = path.toString().replace(source, target);
         Path path1 = Paths.get(targetName);

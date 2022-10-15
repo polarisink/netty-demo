@@ -1,4 +1,4 @@
-package com.lqs;
+package com.lqs.nio;
 
 import org.junit.Test;
 
@@ -17,13 +17,13 @@ public class GatheringWritesTest {
    * 减少数据拷贝，提高效率
    */
   @Test
-  public void test(){
+  public void test() {
     ByteBuffer hello = StandardCharsets.UTF_8.encode("hello");
     ByteBuffer world = StandardCharsets.UTF_8.encode("world");
     ByteBuffer lqs = StandardCharsets.UTF_8.encode("lqs");
 
     try (FileChannel channel = new RandomAccessFile("words.txt", "rw").getChannel()) {
-      channel.write(new ByteBuffer[]{hello,world,lqs});
+      channel.write(new ByteBuffer[]{hello, world, lqs});
     } catch (IOException e) {
     }
   }

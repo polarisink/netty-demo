@@ -1,4 +1,4 @@
-package com.lqs;
+package com.lqs.nio;
 
 import java.io.IOException;
 import java.nio.file.Files;
