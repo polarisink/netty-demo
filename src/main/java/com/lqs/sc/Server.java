@@ -5,17 +5,12 @@ import lombok.extern.slf4j.Slf4j;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
-import java.nio.channels.SelectableChannel;
-import java.nio.channels.SelectionKey;
-import java.nio.channels.Selector;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
 
-import static com.lqs.c1.ByteBufferUtil.*;
+import static com.lqs.c1.ByteBufferUtil.debugRead;
 
 /**
  * @author aries
@@ -24,24 +19,21 @@ import static com.lqs.c1.ByteBufferUtil.*;
 @Slf4j
 public class Server {
   public static void main(String[] args) throws IOException {
-
-
     ByteBuffer buffer = ByteBuffer.allocate(16);
     //创建服务器
     ServerSocketChannel ssc = ServerSocketChannel.open();
-    ssc.configureBlocking(false);//设置非阻塞模式
-
+    //设置非阻塞模式
+    ssc.configureBlocking(false);
     //绑定端口
     ssc.bind(new InetSocketAddress(8080));
     //连接集合
     List<SocketChannel> channels = new ArrayList<>();
-
     //会导致cpu 100%,由此引入Selector
     while (true) {
-
       //建立与客户连接
       log.info("connecting.....");
-      SocketChannel accept = ssc.accept();//阻塞，线程停止运行
+      //阻塞，线程停止运行
+      SocketChannel accept = ssc.accept();
       if (accept != null) {
         accept.configureBlocking(false);
         channels.add(accept);
@@ -50,7 +42,8 @@ public class Server {
       for (SocketChannel sc : channels) {
         //接收数据
         log.info("start read");
-        int read = sc.read(buffer);//非阻塞，没有读到数据，仍然会返回0
+        //非阻塞，没有读到数据，仍然会返回0
+        int read = sc.read(buffer);
         if (read > 0) {
           buffer.flip();
           debugRead(buffer);

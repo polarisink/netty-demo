@@ -1,11 +1,10 @@
 package com.lqs;
 
-import com.lqs.c1.ByteBufferUtil;
 import org.junit.Test;
 
 import java.nio.ByteBuffer;
 
-import static com.lqs.c1.ByteBufferUtil.*;
+import static com.lqs.c1.ByteBufferUtil.debugAll;
 
 /**
  * @author aries

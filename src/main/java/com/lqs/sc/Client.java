@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
+import java.net.SocketAddress;
 import java.nio.channels.SocketChannel;
 import java.nio.charset.Charset;
 
@@ -16,7 +17,9 @@ public class Client {
   public static void main(String[] args) throws IOException {
     SocketChannel socketChannel = SocketChannel.open();
     socketChannel.connect(new InetSocketAddress("localhost",8080));
+    SocketAddress localAddress = socketChannel.getLocalAddress();
     log.info("waiting......");
-    socketChannel.read(Charset.defaultCharset().encode("wdui9fhjijfpsdadasda\n"));
+    socketChannel.read(Charset.defaultCharset().encode("hello\nworld\n"));
+    System.in.read();
   }
 }
