@@ -1,4 +1,4 @@
-package github.polarisink.sc;
+package github.polarisink.nio.sc;
 
 import github.polarisink.nio.c1.ByteBufferUtil;
 import lombok.extern.slf4j.Slf4j;
