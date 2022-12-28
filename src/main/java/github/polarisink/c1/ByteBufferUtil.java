@@ -1,4 +1,4 @@
-package com.lqs.c1;
+package github.polarisink.c1;
 
 import io.netty.util.internal.StringUtil;
 

@@ -1,4 +1,4 @@
-package com.lqs.write;
+package github.polarisink.write;
 
 import lombok.extern.slf4j.Slf4j;
 

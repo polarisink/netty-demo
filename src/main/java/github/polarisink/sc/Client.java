@@ -1,4 +1,4 @@
-package com.lqs.sc;
+package github.polarisink.sc;
 
 import lombok.extern.slf4j.Slf4j;
 

@@ -1,4 +1,4 @@
-package com.lqs;
+package github.polarisink;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
@@ -6,7 +6,7 @@ import org.junit.Test;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 
-import static com.lqs.c1.ByteBufferUtil.*;
+import static github.polarisink.c1.ByteBufferUtil.*;
 
 /**
  * @author aries

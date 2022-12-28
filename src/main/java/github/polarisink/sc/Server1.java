@@ -1,6 +1,6 @@
-package com.lqs.sc;
+package github.polarisink.sc;
 
-import com.lqs.c1.ByteBufferUtil;
+import github.polarisink.c1.ByteBufferUtil;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
@@ -11,8 +11,6 @@ import java.nio.channels.Selector;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
 import java.util.Iterator;
-
-import static com.lqs.c1.ByteBufferUtil.*;
 
 /**
  * @author aries
@@ -103,7 +101,7 @@ public class Server1 {
         for (int j = 0; j < length; j++) {
           target.put(source.get());
         }
-        debugAll(target);
+        ByteBufferUtil.debugAll(target);
       }
     }
     source.compact();

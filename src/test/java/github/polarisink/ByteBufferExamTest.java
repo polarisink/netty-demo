@@ -1,11 +1,10 @@
-package com.lqs;
+package github.polarisink;
 
-import com.lqs.c1.ByteBufferUtil;
 import org.junit.Test;
 
 import java.nio.ByteBuffer;
 
-import static com.lqs.c1.ByteBufferUtil.*;
+import static github.polarisink.c1.ByteBufferUtil.*;
 
 /**
  * @author aries

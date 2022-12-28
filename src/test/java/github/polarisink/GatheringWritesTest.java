@@ -1,4 +1,4 @@
-package com.lqs;
+package github.polarisink;
 
 import org.junit.Test;
 
